@@ -11,5 +11,12 @@ public class PlayerStats : ScriptableObject
   [Header("Player")]
   public float health;
   public float maxHealth;
-  
+  public float mana;
+  public float maxMana;
+
+  public void resetPlayerManaAndHealth()
+  {
+    health = maxHealth;
+    mana = maxMana;
+  }
 }

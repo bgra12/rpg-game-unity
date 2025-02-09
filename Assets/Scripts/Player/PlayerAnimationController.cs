@@ -8,7 +8,8 @@ public class PlayerAnimationController : MonoBehaviour
     private readonly int moveY = Animator.StringToHash("moveY");
     private readonly int isMoving = Animator.StringToHash("isMoving");
     private readonly int dead = Animator.StringToHash("dead");
-
+    private readonly int revive = Animator.StringToHash("revive");
+    
     private Animator animator;
     
     private void Awake()
@@ -30,5 +31,11 @@ public class PlayerAnimationController : MonoBehaviour
     {
         animator.SetFloat(moveX, dir.x);
         animator.SetFloat(moveY, dir.y);
+    }
+
+    public void resetPlayerAnimation()
+    {
+        setMoveDirection(Vector2.down);
+        animator.SetTrigger(revive);
     }
 }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Player;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -24,14 +23,7 @@ public class PlayerMovement : MonoBehaviour
        rb2D = GetComponent<Rigidbody2D>();
        playerAnimationController = GetComponent<PlayerAnimationController>();
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         readMovement();
@@ -59,8 +51,13 @@ public class PlayerMovement : MonoBehaviour
             playerAnimationController.setIsMoving(false);
             return;
         }
-        playerAnimationController.setIsMoving(true);
-        playerAnimationController.setMoveDirection(moveDirection);
+
+        if (playerController.Stats.health > 0)
+        {
+            playerAnimationController.setIsMoving(true);
+            playerAnimationController.setMoveDirection(moveDirection);
+        }
+       
     }
     private void OnEnable()
     {
