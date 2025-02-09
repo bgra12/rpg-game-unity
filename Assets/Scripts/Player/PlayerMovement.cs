@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,21 +9,20 @@ public class PlayerMovement : MonoBehaviour
     [Header("Config")]
     [SerializeField]
     private float speed;
-
-    private readonly int moveX = Animator.StringToHash("moveX");
-    private readonly int moveY = Animator.StringToHash("moveY");
-    private readonly int isMoving = Animator.StringToHash("isMoving");
     
+    private PlayerAnimationController playerAnimationController;
     private PlayerActions actions;
     private Rigidbody2D rb2D;
     private Vector2 moveDirection;
-    private Animator animator;
+    private PlayerController playerController;
+ 
     
     private void Awake()
     {
+       playerController = GetComponent<PlayerController>();
        actions = new PlayerActions();
        rb2D = GetComponent<Rigidbody2D>();
-       animator = GetComponent<Animator>();
+       playerAnimationController = GetComponent<PlayerAnimationController>();
     }
 
     // Start is called before the first frame update
@@ -44,6 +44,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void move()
     {
+        if (playerController.Stats.health <= 0)
+        {
+            return;
+        }
         rb2D.MovePosition(rb2D.position + moveDirection * (speed * Time.fixedDeltaTime));
     }
 
@@ -52,12 +56,11 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = actions.Movement.Move.ReadValue<Vector2>().normalized;
         if (moveDirection == Vector2.zero)
         {
-            animator.SetBool(isMoving, false);
+            playerAnimationController.setIsMoving(false);
             return;
         }
-        animator.SetBool(isMoving, true);
-        animator.SetFloat(moveX, moveDirection.x);
-        animator.SetFloat(moveY, moveDirection.y);
+        playerAnimationController.setIsMoving(true);
+        playerAnimationController.setMoveDirection(moveDirection);
     }
     private void OnEnable()
     {
