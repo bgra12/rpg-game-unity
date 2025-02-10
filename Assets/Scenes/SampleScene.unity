@@ -1099,6 +1099,8 @@ GameObject:
   - component: {fileID: 135516688}
   - component: {fileID: 135516687}
   - component: {fileID: 135516686}
+  - component: {fileID: 135516691}
+  - component: {fileID: 135516692}
   m_Layer: 6
   m_Name: Enemy_Reptile
   m_TagString: Enemy
@@ -1256,6 +1258,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1087588190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &135516691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135516685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2299cfb8252a42ae933998e858cbe862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: Wander
+  states:
+  - id: Wander
+    actions:
+    - {fileID: 135516692}
+    transitions: []
+--- !u!114 &135516692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135516685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406a3bc9bba410a4aa066d3ec9d6ac66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+  wanderTime: 1
+  wanderRange: {x: 2, y: 2}
 --- !u!1001 &135938784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28445,6 +28480,8 @@ GameObject:
   - component: {fileID: 365313338}
   - component: {fileID: 365313337}
   - component: {fileID: 365313336}
+  - component: {fileID: 365313341}
+  - component: {fileID: 365313342}
   m_Layer: 6
   m_Name: Enemy_Beast
   m_TagString: Enemy
@@ -28602,6 +28639,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1087588190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &365313341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365313335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2299cfb8252a42ae933998e858cbe862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: Wander
+  states:
+  - id: Wander
+    actions:
+    - {fileID: 365313342}
+    transitions: []
+--- !u!114 &365313342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365313335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406a3bc9bba410a4aa066d3ec9d6ac66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+  wanderTime: 1
+  wanderRange: {x: 2, y: 2}
 --- !u!4 &370148687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1591870080053732601, guid: 0d229a681a0ec584da122beafa992115, type: 3}
@@ -31189,7 +31259,7 @@ GameObject:
   - component: {fileID: 912192437}
   - component: {fileID: 912192438}
   - component: {fileID: 912192439}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player-Ninja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34119,6 +34189,8 @@ GameObject:
   - component: {fileID: 1358828652}
   - component: {fileID: 1358828651}
   - component: {fileID: 1358828655}
+  - component: {fileID: 1358828656}
+  - component: {fileID: 1358828657}
   m_Layer: 6
   m_Name: Enemy_Bamboo
   m_TagString: Enemy
@@ -34276,6 +34348,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1358828656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358828650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2299cfb8252a42ae933998e858cbe862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: Wander
+  states:
+  - id: Wander
+    actions:
+    - {fileID: 1358828657}
+    transitions: []
+--- !u!114 &1358828657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358828650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406a3bc9bba410a4aa066d3ec9d6ac66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+  wanderTime: 1
+  wanderRange: {x: 2, y: 2}
 --- !u!4 &1371521794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 310345642519123674, guid: 0711a88fdbe5bd94bb2db321ae10b19e, type: 3}
@@ -34779,6 +34884,8 @@ GameObject:
   - component: {fileID: 1478596574}
   - component: {fileID: 1478596573}
   - component: {fileID: 1478596572}
+  - component: {fileID: 1478596577}
+  - component: {fileID: 1478596578}
   m_Layer: 6
   m_Name: Enemy_Mushroom
   m_TagString: Enemy
@@ -34936,6 +35043,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1087588190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1478596577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478596571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2299cfb8252a42ae933998e858cbe862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: Wander
+  states:
+  - id: Wander
+    actions:
+    - {fileID: 1478596578}
+    transitions: []
+--- !u!114 &1478596578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478596571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406a3bc9bba410a4aa066d3ec9d6ac66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+  wanderTime: 1
+  wanderRange: {x: 2, y: 2}
 --- !u!1001 &1484072364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36069,6 +36209,8 @@ GameObject:
   - component: {fileID: 1685222862}
   - component: {fileID: 1685222861}
   - component: {fileID: 1685222860}
+  - component: {fileID: 1685222865}
+  - component: {fileID: 1685222866}
   m_Layer: 6
   m_Name: Enemy_Flame
   m_TagString: Enemy
@@ -36226,6 +36368,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1087588190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1685222865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685222859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2299cfb8252a42ae933998e858cbe862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: Wander
+  states:
+  - id: Wander
+    actions:
+    - {fileID: 1685222866}
+    transitions: []
+--- !u!114 &1685222866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685222859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406a3bc9bba410a4aa066d3ec9d6ac66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+  wanderTime: 1
+  wanderRange: {x: 2, y: 2}
 --- !u!1001 &1689505388
 PrefabInstance:
   m_ObjectHideFlags: 0
