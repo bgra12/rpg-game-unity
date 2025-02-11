@@ -6,7 +6,8 @@ using UnityEngine;
     {
         [SerializeField] private string initState;
         [SerializeField] private FSMState[] states;
-        
+
+        public Transform player { get; set; } 
         public FSMState currentState{get; set;}
 
 
