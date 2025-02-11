@@ -28,6 +28,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
        playerStats.health -= damage;
        if (playerStats.health <= 0)
        {
+           playerStats.health = 0;
            playerDead();
        }
     }
