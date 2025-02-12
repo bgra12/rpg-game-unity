@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
@@ -17,15 +18,16 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (playerStats.health <= 0f)
         {
-            TakeDamage(1f);
+            playerDead();
         }
     }
 
     public void TakeDamage(float damage)
     {
        playerStats.health -= damage;
+       TextManager.instance.showDamageText(damage,transform);
        if (playerStats.health <= 0)
        {
            playerStats.health = 0;
@@ -36,5 +38,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private void playerDead()
     {
       playerAnimationController.setDeadAnimation();
+      transform.GetComponent<CircleCollider2D>().enabled = false;
     }
 }

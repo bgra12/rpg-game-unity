@@ -25,7 +25,7 @@ public class ActionAttack : FSMAction
 
     private void attackPlayer()
     {
-        if (enemy.player == null) return;
+        if (enemy.player == null || PlayerController.instance.Stats.health <= 0f) return;
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
