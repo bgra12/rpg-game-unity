@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Config")]
     [SerializeField]
     private float speed;
+
+    public Vector2 MoveDirection => moveDirection;
     
     private PlayerAnimationController playerAnimationController;
     private PlayerActions actions;
