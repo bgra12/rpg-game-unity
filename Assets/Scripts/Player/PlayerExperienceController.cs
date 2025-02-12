@@ -8,6 +8,7 @@
 
         public void increasePlayerExperience(float amount)
         {
+            stats.totalExp += amount;
             stats.currentExp += amount;
             while (stats.currentExp >= stats.nextLevelExp)
             {

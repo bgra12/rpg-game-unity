@@ -20,17 +20,27 @@ public class PlayerStats : ScriptableObject
   public float baseDamage;
   public float criticalDamageRate;
   public float criticalChanceRate;
+
+  [HideInInspector] public float totalExp;
+  [HideInInspector] public float totalDamage;
   
   public void resetPlayerManaAndHealth()
   {
     health = maxHealth;
     mana = maxMana;
+    level = 1;
+    currentExp = 0f;
+    nextLevelExp = initialNextLevelExp;
+    totalExp = 0f;
   }
 
   public void resetPlayerExp()
   {
+    health = maxHealth;
+    mana = maxMana;
     level = 1;
     currentExp = 0f;
     nextLevelExp = initialNextLevelExp;
+    totalExp = 0f;
   }
 }

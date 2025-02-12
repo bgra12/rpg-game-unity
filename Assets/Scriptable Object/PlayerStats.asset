@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   currentExp: 0
-  nextLevelExp: 650
+  nextLevelExp: 100
   initialNextLevelExp: 0
   expMultiplier: 50
   health: 10
   maxHealth: 10
-  mana: 12
-  maxMana: 20
+  mana: 18
+  maxMana: 30
   baseDamage: 1
   criticalDamageRate: 50
-  criticalChanceRate: 50
+  criticalChanceRate: 10
+  totalExp: 35
+  totalDamage: 2.5

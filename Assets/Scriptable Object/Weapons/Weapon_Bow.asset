@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: f43beb2b739d7654fadb6f7318b2f60e, type: 3}
   weaponType: 0
-  damage: 1.5
+  damage: 2
   projectile: {fileID: 851674464490320003, guid: 1843fda3f48a4614a9b6f11f93b8b3a3, type: 3}
-  projectileMana: 2
+  projectileMana: 1

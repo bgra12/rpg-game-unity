@@ -44,7 +44,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        currentWeapon = initialWeapon;
+        equipWeapon(initialWeapon);
         playerActions.Attack.ClickAttack.performed += ctx => attack();
     }
 
@@ -159,6 +159,12 @@ public class PlayerAttack : MonoBehaviour
             damage += damage * (playerStats.criticalDamageRate / 100f);
         }
         return damage;
+    }
+
+    public void equipWeapon(Weapon newWeapon)
+    {
+        currentWeapon = newWeapon;
+        playerStats.totalDamage = playerStats.baseDamage + currentWeapon.damage;
     }
     
 }
