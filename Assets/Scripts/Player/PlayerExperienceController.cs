@@ -20,6 +20,7 @@
         private void nextLevel()
         {
             stats.level++;
+            stats.attributePoints++;
             float currentExpRequired = stats.nextLevelExp;
             float newNextLevelExp = Mathf.Round(currentExpRequired + stats.nextLevelExp * (stats.expMultiplier / 100f));
             stats.nextLevelExp = newNextLevelExp;

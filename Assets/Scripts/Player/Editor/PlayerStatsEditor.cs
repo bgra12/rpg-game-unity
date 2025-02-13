@@ -13,7 +13,7 @@ public class PlayerStatsEditor : Editor
         base.OnInspectorGUI();
         if (GUILayout.Button("Reset Player"))
         {
-            statsTarget.resetPlayerManaAndHealth();
+            statsTarget.resetPlayer();
         }
     }
 }

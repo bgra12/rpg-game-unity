@@ -22,7 +22,7 @@ using UnityEngine;
 
         public void resetPlayer()
         {
-            playerStats.resetPlayerManaAndHealth();
+            playerStats.resetPlayer();
             playerAnimationController.resetPlayerAnimation();
             transform.GetComponent<CircleCollider2D>().enabled = true;
             playerMana.resetMana();
