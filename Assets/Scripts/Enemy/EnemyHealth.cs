@@ -6,10 +6,12 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public static event Action onEnemyDeadEvent;
+    
     [Header("Config")]
     [SerializeField] private float health;
     
     public float currentHealth { get; private set; }
+    
     private Animator animator;
     private EnemyAI enemy;
     private EnemySelector enemySelector;
@@ -31,7 +33,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        if (currentHealth <= 0)
+        if (currentHealth <= 0f)
         {
             killEnemy();
         }

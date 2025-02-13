@@ -10,7 +10,7 @@
         {
             stats.totalExp += amount;
             stats.currentExp += amount;
-            while (stats.currentExp >= stats.nextLevelExp)
+            if (stats.currentExp >= stats.nextLevelExp)
             {
                 stats.currentExp -= stats.nextLevelExp;
                 nextLevel();
@@ -23,13 +23,5 @@
             float currentExpRequired = stats.nextLevelExp;
             float newNextLevelExp = Mathf.Round(currentExpRequired + stats.nextLevelExp * (stats.expMultiplier / 100f));
             stats.nextLevelExp = newNextLevelExp;
-        }
-        
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                increasePlayerExperience(300f);
-            }
         }
     }

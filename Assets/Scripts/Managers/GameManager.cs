@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     
     [SerializeField] private PlayerController player;
-
+    private PlayerExperienceController playerExpController;
     private void Awake()
     {
+        playerExpController = player.GetComponent<PlayerExperienceController>();
         instance = this;
     }
     private void Update()
@@ -21,7 +22,6 @@ public class GameManager : MonoBehaviour
 
     public void addPlayerExp(float expAmount)
     {
-        PlayerExperienceController playerExpController = player.GetComponent<PlayerExperienceController>();
         playerExpController.increasePlayerExperience(expAmount);
     }
 }
