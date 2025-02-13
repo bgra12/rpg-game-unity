@@ -38470,7 +38470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2206d8dde2463791830beaed6a502e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 4f4d5be0255e1f043827fd59d72d0cbb, type: 2}
+  playerStats: {fileID: 11400000, guid: 4f4d5be0255e1f043827fd59d72d0cbb, type: 2}
 --- !u!114 &912192439
 MonoBehaviour:
   m_ObjectHideFlags: 0

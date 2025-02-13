@@ -1,17 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    public static GameManager instance;
-    
     [SerializeField] private PlayerController player;
-    private PlayerExperienceController playerExpController;
-    private void Awake()
-    {
-        playerExpController = player.GetComponent<PlayerExperienceController>();
-        instance = this;
-    }
+    public PlayerController Player => player;
+        
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -22,6 +16,6 @@ public class GameManager : MonoBehaviour
 
     public void addPlayerExp(float expAmount)
     {
-        playerExpController.increasePlayerExperience(expAmount);
+        player.GetComponent<PlayerExperienceController>().increasePlayerExperience(expAmount);
     }
 }

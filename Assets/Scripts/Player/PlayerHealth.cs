@@ -35,6 +35,20 @@ public class PlayerHealth : MonoBehaviour, IDamageable
        }
     }
 
+    public void restoreHealth(float amount)
+    {
+        playerStats.health += amount;
+        if (playerStats.health > playerStats.maxHealth)
+        {
+            playerStats.health = playerStats.maxHealth;
+        }
+    }
+
+    public bool canRestoreHealth()
+    {
+        return playerStats.health > 0f && playerStats.health < playerStats.maxHealth;
+    }
+
     private void playerDead()
     {
       playerAnimationController.setDeadAnimation();

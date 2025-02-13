@@ -4,7 +4,7 @@ using UnityEngine;
     public class PlayerMana : MonoBehaviour
     {
         [Header("Configuration")]
-        [SerializeField] private PlayerStats stats;
+        [SerializeField] private PlayerStats playerStats;
 
         public float currentMana { get; private set; }
 
@@ -15,12 +15,23 @@ using UnityEngine;
 
         public void useMana(float amount)
         {
-            stats.mana = Mathf.Max(stats.mana -= amount, 0f);
-            currentMana = stats.mana;
+            playerStats.mana = Mathf.Max(playerStats.mana -= amount, 0f);
+            currentMana = playerStats.mana;
+        }
+
+        public bool canRestoreMana()
+        {
+            return playerStats.mana > 0f && playerStats.mana < playerStats.maxMana;
+        }
+
+        public void restoreMana(float amount)
+        {
+            playerStats.mana += amount;
+            playerStats.mana = Mathf.Min(playerStats.mana, playerStats.maxMana);
         }
 
         public void resetMana()
         {
-            currentMana = stats.maxMana;
+            currentMana = playerStats.maxMana;
         }
     }

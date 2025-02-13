@@ -11,11 +11,13 @@ using UnityEngine;
 
         public PlayerStats Stats => playerStats;
         public PlayerMana playerMana { get; private set; }
+        public PlayerHealth playerHealth { get; private set; }
         private PlayerAnimationController playerAnimationController;
-
+        
         private void Awake()
         {
             playerMana = GetComponent<PlayerMana>();
+            playerHealth = GetComponent<PlayerHealth>();
             playerAnimationController = GetComponent<PlayerAnimationController>();
             instance = this;
         }
