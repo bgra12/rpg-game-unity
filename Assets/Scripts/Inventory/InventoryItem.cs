@@ -34,7 +34,7 @@ public class InventoryItem : ScriptableObject
         return instance;
     }
 
-    public virtual bool useItem()
+    public virtual bool canUseItem()
     {
         return true;
     }

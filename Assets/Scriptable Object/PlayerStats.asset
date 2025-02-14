@@ -19,8 +19,8 @@ MonoBehaviour:
   expMultiplier: 50
   health: 10
   maxHealth: 10
-  mana: 14
-  maxMana: 14
+  mana: 20
+  maxMana: 20
   baseDamage: 2
   criticalDamageRate: 50
   criticalChanceRate: 10

@@ -6,7 +6,7 @@ public class ItemManaPotion : InventoryItem
     [Header("Config")] 
     public float manaAmount;
 
-    public override bool useItem()
+    public override bool canUseItem()
     {
         if (GameManager.instance.Player.playerMana.canRestoreMana())
         {
